@@ -90,9 +90,10 @@ h1 {
 }
 .active a {
   background-color: #86305f !important;
-
   color: #fff !important;
   font-weight: bold;
+  pointer-events: none;
+  cursor: default;
 }
 
 .card-item {
