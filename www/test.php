@@ -11,8 +11,8 @@ ini_set('display_startup_errors', 1);
 require_once 'inc/header.php';
 require 'inc/config.php';
 require 'models/NewsModel.php';
-$db1 = Db::getConnec();
-$db2 = Db::getConnec();
+$db1 = Db::getConnect();
+$db2 = Db::getConnect();
 
 echo '<pre>';
 

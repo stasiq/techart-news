@@ -11,7 +11,7 @@ class Db
     private static $db = null;
     private static $instance = null;
 
-    static function getConnec()
+    static function getConnect()
     {
         if (is_null(self::$instance)) {
             $driver = Settings::$driver;
