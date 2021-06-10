@@ -1,11 +1,16 @@
     <div class="container">
         <?php
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $id = isset($_GET['id']) ? $_GET['id'] : 1;
+        $limit = 5;
+        $offset = $limit * ($page - 1);
         ?>
         <div class="news">
             <h1>Новости</h1>
             <hr class="hr-dotted ">
 
             <?php
+            $rows = models\NewsModel::getList($limit, $offset);
             foreach ($rows as $row) {
             ?>
 
@@ -29,7 +34,7 @@
             <nav>
                 <ul class="pagination d-flex flex-wrap">
                     <?php
-
+                    $count = models\NewsModel::getCount();
                     $total_pages = ceil($count / $limit);
                     for ($i = 1; $i <= $total_pages; $i++) {
                         if ($i == $page) {

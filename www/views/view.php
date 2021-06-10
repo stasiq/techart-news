@@ -1,8 +1,9 @@
 <div class="container">
 
     <?php
-    require 'inc/config.php';
-
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $id = isset($_GET['id']) ? $_GET['id'] : 1;
+    $row = models\NewsModel::getItem($id);
     ?>
 
     <div class="row card">
