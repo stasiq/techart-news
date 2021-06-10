@@ -11,9 +11,12 @@
 </head>
 
 <body>
+    <h1>Нeader</h1>
     <?php
-    include($template_path);
+    echo $out;
     ?>
+    <h1>Footer</h1>
+
 </body>
 
 </html>

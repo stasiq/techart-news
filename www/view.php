@@ -12,5 +12,5 @@ $limit = 5;
 $offset = $limit * ($page - 1);
 $title = 'Просмотр';
 $template_path = 'views/view_view.php';
-include('views/template_view.php');
-// include('views/view_view.php');
+include('views/view_view.php');
+include('views/layout.php');
