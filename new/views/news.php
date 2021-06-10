@@ -4,6 +4,8 @@
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
         $limit = 5;
         $offset = $limit * ($page - 1);
+
+
         ?>
         <div class="news">
             <h1>Новости</h1>
