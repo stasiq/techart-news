@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <h1>Нeader</h1>
+
     <?php
     echo $out;
     ?>
-    <h1>Footer</h1>
+
 
 </body>
 

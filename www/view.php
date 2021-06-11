@@ -4,13 +4,13 @@ spl_autoload_register(function ($class) {
     $filename = $_SERVER['DOCUMENT_ROOT'] . $ds . str_replace('\\', $ds, $class) . '.php';
     require($filename);
 });
-
-
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $id = isset($_GET['id']) ? $_GET['id'] : 1;
 $limit = 5;
 $offset = $limit * ($page - 1);
 $title = 'Просмотр';
 $template_path = 'views/view_view.php';
+ob_start();
 include('views/view_view.php');
+$out = ob_get_clean();
 include('views/layout.php');
