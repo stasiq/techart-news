@@ -11,12 +11,9 @@
 </head>
 
 <body>
-
     <?php
     echo $out;
     ?>
-
-
 </body>
 
 </html>
