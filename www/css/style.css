@@ -16,10 +16,11 @@ a:hover {
   width: 100%;
 }
 .card__date {
+  display: flex;
+  align-items: center;
   background-color: #86305f;
   color: white;
-  padding: 2px;
-  max-height: 25px;
+  max-height: 24px;
   margin-right: 5px;
 }
 

@@ -12,10 +12,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex flex-row card__item">
-                        <span class="card__date"><?= date('d.m.Y', $row->idate); ?></span>
-                        <a class="card__title m-0" href="/view.php?id=<?= $row->id ?>&page=<?= $page ?>"><?= $row->title ?></a>
+                        <div class="card__date"><span><?= date('d.m.Y', $row->idate); ?></span></div>
+                        <a class="card__title m-0" href="/news/<?= $row->id ?>/"><?= $row->title ?></a>
                     </div>
-                    <p class="card__text"><?= $row->announce ?></p>
+                    <p class=" card__text"><?= $row->announce ?></p>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
                         $state = "";
                     }
                 ?>
-                    <li class='page-item <?= $state ?>'><a class='page-linkk' href='/news.php?page=<?= $i ?>'><?= $i ?></a></li>
+                    <li class='page-item <?= $state ?>'><a class='page-linkk' href='/news/page-<?= $i ?>/'><?= $i ?></a></li>
                 <?php
                 };
                 ?>

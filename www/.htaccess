@@ -1,0 +1,46 @@
+RewriteEngine On  
+
+
+RewriteEngine On  
+  
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+
+RewriteRule ^(.*)$ ./index.php
+
+
+
+
+#RewriteCond %{SCRIPT_FILENAME} !-d  
+#RewriteCond %{SCRIPT_FILENAME} !-f  
+
+#RewriteRule ^(.*)$ ./index.php?
+
+#RewriteCond %{REQUEST_URI} index\.php
+#RewriteRule ^(.*)index\.php$ /$1/ [R=301,L]
+
+
+
+
+
+
+
+
+
+
+
+#RewriteEngine On
+#RewriteBase /
+
+
+#RewriteRule /css/([^\/]+).css$ css/$1.css [L]
+#RewriteRule ^news/(\d+)/$ /view.php?id=$1&page=$2
+
+#RewriteRule ^news/$  /news.php
+#RewriteRule ^news/page-(\d+)/$ /news.php?page=$1 
+
+
+
+
+
+

@@ -1,8 +1,4 @@
 <div class="container">
-    <?php
-    $row = models\NewsModel::getItem($id);
-    ?>
-
     <div class="row card">
         <div class="news">
             <div class="col-md-12 card-body">
@@ -12,7 +8,7 @@
                 <hr class="hr-dotted ">
                 <p class="card__text"><?= $row->content ?></p>
                 <hr class="hr-dotted ">
-                <a href='/news.php?page=<?= $page ?>'> Все новости >></a>
+                <a href='/news/'> Все новости >></a>
             </div>
         </div>
     </div>
