@@ -1,5 +1,7 @@
 <div class="container">
     <?php
+
+    use controllers\NewsController;
     ?>
     <div class="news">
         <h1>Новости</h1>

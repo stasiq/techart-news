@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    echo $out;
+    echo $out
     ?>
 </body>
 

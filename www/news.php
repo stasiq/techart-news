@@ -1,15 +1,10 @@
 <?php
-spl_autoload_register(function ($class) {
-    $ds = DIRECTORY_SEPARATOR;
-    $filename = $_SERVER['DOCUMENT_ROOT'] . $ds . str_replace('\\', $ds, $class) . '.php';
-    require($filename);
-});
-$title = 'Новости';
-$limit = 5;
-$offset = $limit * ($page - 1);
-$rows = models\NewsModel::getList($limit, $offset);
-$count = models\NewsModel::getCount();
-ob_start();
-include('views/news_view.php');
-$out = ob_get_clean();
-include('views/layout.php');
+// $title = 'Новости';
+// $limit = 5;
+// $offset = $limit * ($page - 1);
+// $rows = models\NewsModel::getList($limit, $offset);
+// $count = models\NewsModel::getCount();
+// ob_start();
+// include('views/News/list.php');
+// $out = ob_get_clean();
+// include('views/layout.php');
