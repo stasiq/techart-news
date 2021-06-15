@@ -9,15 +9,15 @@
 
         <?php
 
-        foreach ($rows as $row) {
+        foreach ($params['items'] as $item) {
         ?>
             <div class="card">
                 <div class="card-body">
-                    <div class="d-flex flex-row card__item">
-                        <div class="card__date"><span><?= date('d.m.Y', $row->idate); ?></span></div>
-                        <a class="card__title m-0" href="/news/<?= $row->id ?>/"><?= $row->title ?></a>
+                    <div class="d-flex flex-item card__item">
+                        <div class="card__date"><span><?= date('d.m.Y', $item->idate); ?></span></div>
+                        <a class="card__title m-0" href="/news/<?= $item->id ?>/"><?= $item->title ?></a>
                     </div>
-                    <p class=" card__text"><?= $row->announce ?></p>
+                    <p class=" card__text"><?= $item->announce ?></p>
                 </div>
             </div>
 
@@ -31,11 +31,10 @@
             <ul class="pagination d-flex flex-wrap">
                 <?php
 
-                $total_pages = ceil($count / $limit);
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    if ($i == $page) {
+                for ($i = 1; $i <= $params['total_pages']; $i++) {
+                    if ($i == $params['page']) {
                         $state = "disabled active";
-                    } elseif ($i != $page) {
+                    } elseif ($i != $params['page']) {
                         $state = "";
                     }
                 ?>

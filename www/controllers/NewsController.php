@@ -6,30 +6,34 @@ use models\NewsModel;
 
 class NewsController
 {
-    public $page = 1;
-    public $id;
-    public $row;
-    public $content;
-    public $title;
+
     public  function actionList($page)
     {
-        $title = 'Новости';
+        $params['title'] = 'Новости';
         $limit = 5;
         $offset = $limit * ($page - 1);
-        $rows = NewsModel::getList($limit, $offset);
+        $params['items'] = NewsModel::getList($limit, $offset);
         $count = NewsModel::getCount();
-        ob_start();
-        include('views/News/list.php');
-        $out = ob_get_clean();
-        include('views/layout.php');
+        $params['total_pages'] = ceil($count / $limit);
+        $params['page'] = $page;
+        $view = 'views/News/list.php';
+        $layout = 'views/layout.php';
+        $this->render($view, $layout, $params);
     }
     public function actionDetail($id)
     {
-        $this->row = NewsModel::getItem($id);
-        $row = $this->row;
-        include('views/News/detail.php');
+        $item = NewsModel::getItem($id);
+        $params['title'] = 'Новость';
+        $params['item'] = $item;
+        $view = 'views/News/detail.php';
+        $layout = 'views/layout.php';
+        $this->render($view, $layout, $params);
+    }
+    public  function render($view, $layout, $params)
+    {
+        include($view);
         ob_start();
         $out = ob_get_clean();
-        include('views/layout.php');
+        include($layout);
     }
 }
