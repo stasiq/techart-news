@@ -19,6 +19,31 @@ RewriteRule ^(.*)$ ./index.php
 #RewriteCond %{REQUEST_URI} index\.php
 #RewriteRule ^(.*)index\.php$ /$1/ [R=301,L]
 
+RewriteRule /css/([^\/]+).css$ css/$1.css [L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -33,7 +58,7 @@ RewriteRule ^(.*)$ ./index.php
 #RewriteBase /
 
 
-#RewriteRule /css/([^\/]+).css$ css/$1.css [L]
+
 #RewriteRule ^news/(\d+)/$ /view.php?id=$1&page=$2
 
 #RewriteRule ^news/$  /news.php

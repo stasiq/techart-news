@@ -4,8 +4,7 @@ spl_autoload_register(function ($class) {
     $filename = $_SERVER['DOCUMENT_ROOT'] . $ds . str_replace('\\', $ds, $class) . '.php';
     require($filename);
 });
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
-$id = isset($_GET['id']) ? $_GET['id'] : 1;
+$title = 'Новости';
 $limit = 5;
 $offset = $limit * ($page - 1);
 $rows = models\NewsModel::getList($limit, $offset);

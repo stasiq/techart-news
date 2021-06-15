@@ -25,3 +25,7 @@ $arrRow = (array) $row;
 echo '<pre>';
 var_dump($arrRow['idate']);
 echo '</pre>';
+
+// $url = $_SERVER['HTTP_HOST'] . '/news.php?page=' . $matches[1];
+// $page = isset($_GET['page']) ? $_GET['page'] : 1;
+// $id = isset($_GET['id']) ? $_GET['id'] : 1;
