@@ -9,7 +9,7 @@
 
         <?php
 
-        foreach ($params['items'] as $item) {
+        foreach ($items as $item) {
         ?>
             <div class="card">
                 <div class="card-body">
@@ -31,10 +31,10 @@
             <ul class="pagination d-flex flex-wrap">
                 <?php
 
-                for ($i = 1; $i <= $params['total_pages']; $i++) {
-                    if ($i == $params['page']) {
+                for ($i = 1; $i <= $total_pages; $i++) {
+                    if ($i == $page) {
                         $state = "disabled active";
-                    } elseif ($i != $params['page']) {
+                    } elseif ($i != $page) {
                         $state = "";
                     }
                 ?>

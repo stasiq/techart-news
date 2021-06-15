@@ -17,8 +17,7 @@ class NewsController
         $params['total_pages'] = ceil($count / $limit);
         $params['page'] = $page;
         $view = 'views/News/list.php';
-        $layout = 'views/layout.php';
-        $this->render($view, $layout, $params);
+        $this->render($view, $params);
     }
     public function actionDetail($id)
     {
@@ -26,14 +25,14 @@ class NewsController
         $params['title'] = 'Новость';
         $params['item'] = $item;
         $view = 'views/News/detail.php';
-        $layout = 'views/layout.php';
-        $this->render($view, $layout, $params);
+        $this->render($view, $params);
     }
-    public  function render($view, $layout, $params)
+    public  function render($view, $params)
     {
+        extract($params);
         ob_start();
         include($view);
-        $out = ob_get_clean();
-        include($layout);
+        $content = ob_get_clean();
+        include('views/layout.php');
     }
 }

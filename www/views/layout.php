@@ -11,12 +11,7 @@
 </head>
 
 <body>
-    <h1>hhh</h1>
-    <?php
-    echo $out
-    ?>
-    <h1>fff</h1>
-
+    <?= $content ?>
 </body>
 
 </html>
