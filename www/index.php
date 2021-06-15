@@ -1,16 +1,11 @@
 <?php
-error_reporting(-1);
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-
-use controllers\NewsController;
-
 spl_autoload_register(function ($class) {
     $ds = DIRECTORY_SEPARATOR;
     $filename = $_SERVER['DOCUMENT_ROOT'] . $ds . str_replace('\\', $ds, $class) . '.php';
     require($filename);
 });
+
+use controllers\NewsController;
 
 $uri = $_SERVER['REQUEST_URI'];
 

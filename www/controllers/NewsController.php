@@ -31,8 +31,8 @@ class NewsController
     }
     public  function render($view, $layout, $params)
     {
-        include($view);
         ob_start();
+        include($view);
         $out = ob_get_clean();
         include($layout);
     }
