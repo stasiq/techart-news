@@ -19,6 +19,7 @@ class NewsController
         $view = 'views/News/list.php';
         self::render($view, $params);
     }
+
     public static function actionDetail($id)
     {
         $item = NewsModel::getItem($id);
@@ -27,6 +28,7 @@ class NewsController
         $view = 'views/News/detail.php';
         self::render($view, $params);
     }
+
     public static function render($view, $params)
     {
         extract($params);

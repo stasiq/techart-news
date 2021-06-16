@@ -52,3 +52,6 @@ call_user_func_array(array($foo, "bar"), array("three", "four"));
 // $url = $_SERVER['HTTP_HOST'] . '/news.php?page=' . $matches[1];
 // $page = isset($_GET['page']) ? $_GET['page'] : 1;
 // $id = isset($_GET['id']) ? $_GET['id'] : 1;
+
+
+    // header('Location:./404.php');
