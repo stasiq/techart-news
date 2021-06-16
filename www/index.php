@@ -10,19 +10,23 @@ use controllers\NewsController;
 $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri == '/news/') {
-    $page = 1;
-    $controller = new NewsController;
-    $controller->actionList($page);
+    $args[] = 1;
+    $controller = 'NewsController';
+    $action = 'ActionList';
 }
 
 if (preg_match('{news/page-(\d+)/$}', $uri, $matches)) {
-    $controller = new NewsController;
-    $page = $matches[1];
-    $controller->actionList($page);
-} else $page = 1;
+    $args[] = $matches[1];
+    $controller = 'NewsController';
+    $action = 'ActionList';
+}
 
 if (preg_match('{news/(\d+)/$}', $uri, $matches)) {
-    $id = $matches[1];
-    $controller = new NewsController;
-    $controller->actionDetail($id);
+    $args[] = $matches[1];
+    $controller = 'NewsController';
+    $action = 'ActionDetail';
 }
+
+
+
+call_user_func_array(['controllers\\' . $controller, $action], $args);
